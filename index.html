@@ -8,6 +8,7 @@
   <script>
             AFRAME.registerComponent('markerhandler', {
     init: function () {
+      scene = new THREE.Scene();
       this.el.sceneEl.addEventListener('markerFound', () => {
         
         var loader = new THREE.GLTFLoader();

@@ -9,8 +9,16 @@
     
     <a-scene embedded vr-mode-ui="enabled: false;" arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
       <script> anchorRef.addEventListener("markerFound", (e)=> {
-          mixer = new THREE.AnimationMixer( gltf.scene );
-          gltf.animations.forEach((clip)=> { mixer.clipAction(clip).play();}})
+          const loader = new THREE.GLTFLoader();
+          loader.load( 'model.gltf', function ( gltf ) {
+
+            mixer = new THREE.AnimationMixer( gltf.scene );
+            var action = mixer.clipAction( gltf.animations[ 0 ] );
+            action.play();
+
+            scene.add( gltf.scene );
+
+          } );}})
       <a-marker markerhandler type='barcode' value='6' smooth='true' smoothThreshold='15' smoothTolerance='.01' smoothCount='100' changeMatrixMode: "cameraTransformMatrix">
         <a-entity 
           position="0 0 .5"

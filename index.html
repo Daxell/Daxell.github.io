@@ -8,7 +8,9 @@
   <body style="margin : 0px; overflow: hidden;">
     
     <a-scene embedded vr-mode-ui="enabled: false;" arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
-      <script> anchorRef.addEventListener("markerFound", (e)=> {animation-mixer= "loop:once"})
+      <script> anchorRef.addEventListener("markerFound", (e)=> {
+          mixer = new THREE.AnimationMixer( gltf.scene );
+          gltf.animations.forEach((clip)=> { mixer.clipAction(clip).play();}})
       <a-marker markerhandler type='barcode' value='6' smooth='true' smoothThreshold='15' smoothTolerance='.01' smoothCount='100' changeMatrixMode: "cameraTransformMatrix">
         <a-entity 
           position="0 0 .5"

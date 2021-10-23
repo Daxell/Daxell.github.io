@@ -15,6 +15,7 @@
 
         loader.load("https://rawcdn.githack.com/Daxell/Daxell.github.io/1e20219f167e8765244461e210c3c20272168dfa/UR5%20Animated.gltf" , function ( gltf ) {
           
+          scene.add( gltf.scene );
           console.log("Event found");
           mixer = new THREE.AnimationMixer( gltf.scene );
           console.log(gltf.animations);
@@ -23,7 +24,7 @@
           action.setLoop(THREE.LoopRepeat);
           action.play();
 
-          scene.add( gltf.scene );
+          
         })
         
          

@@ -7,7 +7,7 @@
   <header Access-Control-Allow-Origin: *></header>
   <body style="margin : 0px; overflow: hidden;">
     
-    <a-scene embedded vr-mode-ui="enabled: false;" arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;' renderer="physicallyCorrectLights: true; gammaOutput: true;">
+    <a-scene embedded vr-mode-ui="enabled: false;" arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;' renderer="physicallyCorrectLights: true; colorManagement: true;">
       
       <a-marker markerhandler type='barcode' value='6' smooth='true' smoothThreshold='15' smoothTolerance='.01' smoothCount='100' changeMatrixMode: "cameraTransformMatrix">
         <a-entity

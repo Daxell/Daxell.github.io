@@ -10,14 +10,15 @@
     <a-scene embedded vr-mode-ui="enabled: false;" arjs='sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;'>
       
       <a-marker markerhandler type='barcode' value='6' smooth='true' smoothThreshold='15' smoothTolerance='.01' smoothCount='100' changeMatrixMode: "cameraTransformMatrix">
-        <a-entity 
-          light="type: ambient; color: #fff; intensity: 5.0"
+        <a-entity
           animation-mixer
           position="0 0 .5"
           scale="5 5 5"
           gltf-model="https://rawcdn.githack.com/Daxell/Daxell.github.io/1e20219f167e8765244461e210c3c20272168dfa/UR5%20Animated.gltf"
           material="color: #BC5421"
         ></a-entity>
+        <a-entity light="type: ambient; color: #BBB"; intensity: 5.0></a-entity>
+<a-entity light="type: directional; color: #FFF; intensity: 5.0" position="-0.5 1 1"></a-entity>
         
       </a-marker>
       <a-entity camera></a-entity>

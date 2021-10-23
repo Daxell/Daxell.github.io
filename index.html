@@ -21,6 +21,23 @@
 
         <a-box color="#BC5421" depth="2" height="4" width="0.5"></a-box>
       </a-marker>
+      <script>
+      AFRAME.registerComponent('modify-materials', {
+        init: function () {
+          // Wait for model to load.
+          this.el.addEventListener('model-loaded', () => {
+            // Grab the mesh / scene.
+            const obj = this.el.getObject3D('mesh');
+            // Go over the submeshes and modify materials we want.
+            obj.traverse(node => {
+              if (node.name.indexOf('Base') !== -1) {
+                node.material.color.set('black');
+              }
+            });
+          });
+        }
+      });
+    </script>
       <a-entity camera></a-entity>
     </a-scene>
   </body>

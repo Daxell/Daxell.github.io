@@ -11,6 +11,9 @@
       scene = new THREE.Scene();
       this.el.sceneEl.addEventListener('markerFound', () => {
         
+        renderer = new THREE.WebGLRenderer( );
+        renderer.render( scene, camera );
+        
         var loader = new THREE.GLTFLoader();
 
         loader.load("https://rawcdn.githack.com/Daxell/Daxell.github.io/1e20219f167e8765244461e210c3c20272168dfa/UR5%20Animated.gltf" , function ( gltf ) {

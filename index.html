@@ -19,7 +19,7 @@
           mixer = new THREE.AnimationMixer( gltf.scene );
           console.log(gltf.animations);
           var action = mixer.clipAction(gltf.animations[0]);
-          action.setTime(0);
+          mixer.setTime(0);
           action.setLoop(THREE.LoopRepeat);
           action.play();
 
